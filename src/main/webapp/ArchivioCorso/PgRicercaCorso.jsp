@@ -13,7 +13,7 @@ import="java.util.*"
 %>
 <META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <META name="GENERATOR" content="IBM WebSphere Studio">
-<TITLE>RicercaCorsoDiscente.jsp</TITLE>
+<TITLE>RicercaCorsoDocente.jsp</TITLE>
 </HEAD>
  
 <BODY bgcolor="#ffff00">
@@ -44,7 +44,7 @@ while(i< pgsElenco.size()){
 	%>
 	<TR>
 		<TD>
-			<input type="radio" name="rdoIDDocente" value="<%= ((Docente)pgsElenco.get(i)).getId() %>" > 
+			<input type="radio" name="rdoIDDiscente" value="<%= ((Docente)pgsElenco.get(i)).getId() %>" > 
 		</TD>
 		<TD> <%= ((Docente)pgsElenco.get(i)).getCognome() %></TD>
 		<TD> <%= ((Docente)pgsElenco.get(i)).getNome() %></TD>	

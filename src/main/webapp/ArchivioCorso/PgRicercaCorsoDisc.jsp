@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<%@page import="model.session.Docente"
-import="model.dao.DocenteService"
-import="model.dao.DocenteDAO"
+<%@page import="model.session.Discente"
+import="model.dao.DiscenteService"
+import="model.dao.DiscenteDAO"
 import="model.session.Corso"%>
 <HTML>
 <HEAD>
@@ -13,21 +13,21 @@ import="java.util.*"
 %>
 <META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <META name="GENERATOR" content="IBM WebSphere Studio">
-<TITLE>RicercaCorsoDocente.jsp</TITLE>
+<TITLE>RicercaCorsoDiscente.jsp</TITLE>
 </HEAD>
  
-<BODY bgcolor="#ffff00">
-<FORM method="post" action="/Corso/CtrlRicercaCorsoPerDocente" name="CtrlRicercaCorsoDocente">
+<BODY>
+<FORM method="post" action="/Corso/CtrlRicercaCorsoPerDiscente" name="CtrlRicercaCorsoDiscente">
 <P>&nbsp;&nbsp; <input type="button" name="azioneUtente" value="Torna alla home" onclick="javascript:location.href='../pgsMenu.htm';">
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<font size="+3">Ricerca corso per Docente</font>
+<font size="+3">Ricerca corso per Discente</font>
 </P> 
 
 <Table>
   <tr>  
   	<TD>
-<% List<Docente> pgsElenco= (List<Docente>) request.getAttribute("elencoDocenti");
+<% List<Discente> pgsElenco= (List<Discente>) request.getAttribute("elencoDiscenti");
    if(pgsElenco.size() > 0){
    		int i = 0;
    
@@ -44,17 +44,17 @@ while(i< pgsElenco.size()){
 	%>
 	<TR>
 		<TD>
-			<input type="radio" name="rdoIDDiscente" value="<%= ((Docente)pgsElenco.get(i)).getId() %>" > 
+			<input type="radio" name="rdoIDDocente" value="<%= ((Discente)pgsElenco.get(i)).getMatricola() %>" > 
 		</TD>
-		<TD> <%= ((Docente)pgsElenco.get(i)).getCognome() %></TD>
-		<TD> <%= ((Docente)pgsElenco.get(i)).getNome() %></TD>	
+		<TD> <%= ((Discente)pgsElenco.get(i)).getCognome() %></TD>
+		<TD> <%= ((Discente)pgsElenco.get(i)).getNome() %></TD>	
 	</TR>
 	<% i++;
 	} %>	
 </TBODY>
 </TABLE>
 <P> </P>
-<% } else{%> Non ci sono Docenti<% } %> <BR>
+<% } else{%> Non ci sono Discenti<% } %> <BR>
 		
 	</TD>
 	<TD>
