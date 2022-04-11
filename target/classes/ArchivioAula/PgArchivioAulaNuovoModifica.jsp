@@ -34,8 +34,8 @@ pageEncoding="ISO-8859-1"
       <input type="text" name="txtDescrizione" class="form-control" value="<%= valoreAula.getDescrizione()%>" id="cognomeDoc">
     </div>
     <div class="form-group col-md-6">
-    <label for="nomeDoc">Nome</label>
-      <input type="text" name="txtNome" class="form-control" value="<%= valoreAula.getNum_posti() %>" id="nomeDoc">
+    <label for="nomeDoc">Numero Posti</label>
+      <input type="text" name="txtNumPosti" class="form-control" value="<%= valoreAula.getNum_posti() %>" id="nomeDoc">
     </div>
   </div>
 

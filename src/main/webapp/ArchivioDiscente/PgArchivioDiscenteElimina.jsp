@@ -13,7 +13,6 @@
 	<jsp:setProperty name="valoreDiscente" property="*" />
 </jsp:useBean>
 
-<P align="center"><FONT size="+2" color="green">Sei sicuro di voler eliminare il Discente?</FONT></P>
 
 
 <FORM method="post" action="/Corso/CtrlArchivioDiscente">

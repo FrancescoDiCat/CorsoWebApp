@@ -112,7 +112,7 @@ public class CtrlGestioneCorso extends HttpServlet{
 			partecipanti.add(new DiscenteService().findById(Integer.parseInt(mat)));
 		}
 		oCorso.setDiscenti(partecipanti);
-		oCorso.setAula(oAul.findById(Integer.parseInt(request.getParameter("rdoAula"))));
+		oCorso.setAula(oAul.findById(Integer.parseInt(request.getParameter("rdoIDAula"))));
 		if(oCorso.getId_corso()==0) {
 			oCoSer.persist((Corso) request.getSession().getAttribute("beanCorso"));
 		}else {

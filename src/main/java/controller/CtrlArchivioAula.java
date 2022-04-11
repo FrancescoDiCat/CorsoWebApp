@@ -51,7 +51,7 @@ public class CtrlArchivioAula extends HttpServlet{
 
 	private void cancellaAula(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
-		oAulaSer.delete(((Aula)request.getSession().getAttribute("beanAula")).getId());
+		oAulaSer.delete(((Aula)request.getSession().getAttribute("beanAula")).getId_aula());
 	}
 
 
@@ -67,8 +67,8 @@ public class CtrlArchivioAula extends HttpServlet{
 		// TODO Auto-generated method stub
 		Aula oggAula = (Aula) request.getSession().getAttribute("valoreAula");
 		oggAula.setDescrizione(request.getParameter("txtDescrizione"));
-		oggAula.setNumPosti(Integer.parseInt(request.getParameter("txtNumPosti")));
-		if(oggAula.getId()==0) {
+		oggAula.setNum_posti(Integer.parseInt(request.getParameter("txtNumPosti")));
+		if(oggAula.getId_aula()==0) {
 			oAulaSer.persist((Aula) request.getSession().getAttribute("valoreAula"));
 		}else {
 			oAulaSer.update((Aula) request.getSession().getAttribute("valoreAula"));

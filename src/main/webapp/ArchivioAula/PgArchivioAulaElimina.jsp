@@ -13,7 +13,6 @@
 	<jsp:setProperty name="beanAula" property="*" />
 </jsp:useBean>
 
-<P align="center"><FONT size="+2" color="green">Sei sicuro di voler eliminare l'Aula?</FONT></P>
 
 
 <FORM method="post" action="/Corso/CtrlArchivioAula">

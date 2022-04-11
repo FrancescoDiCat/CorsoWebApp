@@ -42,7 +42,7 @@ public class Corso {
 	@Column(name="durata")
 	private int durata;
 	
-	@ManyToOne(fetch = FetchType.LAZY, cascade = { CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.PERSIST }, targetEntity = Docente.class) 
+	@ManyToOne(fetch = FetchType.EAGER, cascade = { CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.PERSIST }, targetEntity = Docente.class) 
 	@JoinColumn(name = "id_docente", referencedColumnName = "id", foreignKey = @javax.persistence.ForeignKey(ConstraintMode.CONSTRAINT))
 	private Docente docente;
 	
