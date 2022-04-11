@@ -32,19 +32,19 @@ public class Discente {
 	@Column(name = "cognome")
 	private String cognome;
 	
-	@ManyToMany(fetch = FetchType.LAZY, cascade = 
-        { 
-                CascadeType.DETACH, 
-                CascadeType.MERGE, 
-                CascadeType.REFRESH, 
-                CascadeType.PERSIST 
-        },targetEntity = Corso.class) 
-	 @JoinTable( 
-	  name = "HB_DISCENTI_CORSO", 
-	  joinColumns = {@JoinColumn(name = "matricola")}, 
-	  inverseJoinColumns = {@JoinColumn(name = "id")}, 
-	  foreignKey = @javax.persistence.ForeignKey(ConstraintMode.CONSTRAINT), 
-	  inverseForeignKey = @javax.persistence.ForeignKey(ConstraintMode.CONSTRAINT))
+	@ManyToMany(fetch = FetchType.LAZY, cascade =
+        {
+                CascadeType.DETACH,
+                CascadeType.MERGE,
+                CascadeType.REFRESH,
+                CascadeType.PERSIST
+        },targetEntity = Corso.class)
+	@JoinTable(
+		name = "HB_DISCENTI_CORSO",
+		joinColumns = {@JoinColumn(name = "matricola")},
+		inverseJoinColumns = {@JoinColumn(name = "id")},
+		foreignKey = @javax.persistence.ForeignKey(ConstraintMode.CONSTRAINT),
+		inverseForeignKey = @javax.persistence.ForeignKey(ConstraintMode.CONSTRAINT))
 	private Set<Corso> corsi = new HashSet<>();
 	
 	public int getMatricola() {

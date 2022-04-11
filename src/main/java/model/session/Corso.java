@@ -42,18 +42,19 @@ public class Corso {
 	@Column(name="durata")
 	private int durata;
 	
-	@ManyToOne(fetch = FetchType.EAGER, cascade = { CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.PERSIST }, targetEntity = Docente.class) 
-	@JoinColumn(name = "id_docente", referencedColumnName = "id", foreignKey = @javax.persistence.ForeignKey(ConstraintMode.CONSTRAINT))
+
+	@ManyToOne(fetch = FetchType.LAZY, cascade = { CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH,
+			CascadeType.PERSIST }, targetEntity = Docente.class)
 	private Docente docente;
 	
-	@ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH, 
-			CascadeType.PERSIST }, targetEntity = Discente.class) 
-	@JoinTable(name = "HB_DISCENTI_CORSO", joinColumns = { @JoinColumn(name = "id") }, inverseJoinColumns = { 
-	@JoinColumn(name = "matricola") }, foreignKey = @javax.persistence.ForeignKey(ConstraintMode.CONSTRAINT), inverseForeignKey = @javax.persistence.ForeignKey(ConstraintMode.CONSTRAINT))
+	@ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH,
+			CascadeType.PERSIST }, targetEntity = Discente.class)
+	@JoinTable(name = "HB_DISCENTI_CORSO", joinColumns = { @JoinColumn(name = "id") }, inverseJoinColumns = {
+			@JoinColumn(name = "matricola") }, foreignKey = @javax.persistence.ForeignKey(ConstraintMode.CONSTRAINT), inverseForeignKey = @javax.persistence.ForeignKey(ConstraintMode.CONSTRAINT))
 	Set<Discente> discenti = new HashSet<>();
 	
-	@ManyToOne
-	@JoinColumn(name="aula")
+	@ManyToOne(fetch = FetchType.LAZY, cascade = { CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH,
+			CascadeType.PERSIST }, targetEntity = Aula.class)
 	private Aula aula;
 	
 	

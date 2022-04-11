@@ -31,8 +31,7 @@ public class Aula {
 	@Column(name = "numero_posti")
 	private int num_posti;
 	
-	@OneToMany(cascade = { CascadeType.ALL }, targetEntity = Corso.class) 
-	@JoinTable(inverseJoinColumns= {@JoinColumn(name = "id_aula")})
+	@OneToMany(mappedBy = "aula", cascade = CascadeType.ALL, orphanRemoval = true, targetEntity = Corso.class)
 	private List<Corso> corsi = new ArrayList<Corso>();
 	
 	public int getId_aula() {

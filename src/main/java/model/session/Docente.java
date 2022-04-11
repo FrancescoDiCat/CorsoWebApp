@@ -34,8 +34,7 @@ public class Docente {
 	@Column(name = "nome")
 	private String nome;
 	
-	@OneToMany(cascade = { CascadeType.ALL }, targetEntity = Corso.class) 
-	 @JoinTable(inverseJoinColumns= {@JoinColumn(name = "id")})
+	@OneToMany(mappedBy = "docente", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<Corso> corsi = new ArrayList<Corso>();
 
 	public int getId() {
